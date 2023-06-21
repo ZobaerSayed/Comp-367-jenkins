@@ -26,6 +26,7 @@ pipeline {
                 }
                 dir('/var/lib/jenkins/workspace/Maven/maven/greeting-webapp') {
                     sh 'mvn clean install'
+                    sh 'mvn package'
                 }
             }
         }
