@@ -10,7 +10,20 @@ pipeline {
         
         stage('Build') {
             steps {
-                sh 'apt-get install -y maven'
+                script {
+                    // Prompt user for the sudo password
+                    def password = input(
+                        id: 'passwordInput',
+                        message: 'Enter the sudo password:',
+                        parameters: [
+                            [$class: 'PasswordParameterDefinition', defaultValue: '', description: '', name: 'PASSWORD']
+                        ]
+                    )
+                    
+                    // Execute the package installation command with sudo and password
+                    sh "echo ${password} | sudo -S apt update"
+                    sh "echo ${password} | sudo -S apt-get install -y maven"
+                }
                 sh 'mvn package'
             }
         }
