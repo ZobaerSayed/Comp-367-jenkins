@@ -19,8 +19,8 @@ pipeline {
                     )
                     
                     // Execute the package installation command with sudo and password
-                    sh "echo ${password} | sudo -S apt update"
-                    sh "echo ${password} | sudo -S apt install -y maven
+                sh "echo ${password} | sudo -S apt update"
+                sh "echo ${password} | sudo -S apt install -y maven"
                 sh 'mvn package'
             }
         }
