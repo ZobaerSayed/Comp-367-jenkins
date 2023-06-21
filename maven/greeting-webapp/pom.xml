@@ -31,9 +31,10 @@
           <port>8080</port>
         </configuration>
       </plugin>
+      <pluginGroups>
+       <pluginGroup>org.apache.tomcat.maven</pluginGroup>
+      </pluginGroups>
     </plugins>
-    <pluginGroups>
-      <pluginGroup>org.apache.tomcat.maven</pluginGroup>
-    </pluginGroups>
+    
   </build>
 </project>
