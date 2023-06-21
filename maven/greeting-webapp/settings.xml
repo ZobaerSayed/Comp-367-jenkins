@@ -7,7 +7,7 @@
   <usePluginRegistry>true</usePluginRegistry>
   <offline>false</offline>
   <pluginGroups>
-    <pluginGroup>org.eclipse.jetty</pluginGroup>
+    <pluginGroup>org.apache.tomcat.maven</pluginGroup>
   </pluginGroups>
 </settings>
 
