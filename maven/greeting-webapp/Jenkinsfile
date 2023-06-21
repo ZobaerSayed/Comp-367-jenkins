@@ -34,7 +34,7 @@ pipeline {
             steps {
                 // Start the application on port 777
                 // or
-                sh 'mvn jetty:run'
+                sh 'mvn tomcat9:run'
             }
         }
     }
