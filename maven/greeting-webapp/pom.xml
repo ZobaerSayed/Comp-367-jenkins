@@ -28,7 +28,7 @@
         <version>9.0.36</version>
         <configuration>
           <scanIntervalSeconds>10</scanIntervalSeconds>
-          <port>8081</port>
+          <port>8080</port>
         </configuration>
       </plugin>
     </plugins>
