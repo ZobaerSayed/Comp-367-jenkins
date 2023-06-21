@@ -34,7 +34,7 @@ pipeline {
             steps {
                 // Start the application on port 777
                 // or
-                sh 'java -jar -Dserver.port=8081 maven/greeting-webapp/target/greeting-webapp.war'
+                sh 'mvn jetty:run'
             }
         }
     }
