@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/ZobaerSayed/Comp-367-jenkins'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                tool 'Maven'
+                
+                sh 'mvn package'
+            }
+        }
+        
+        stage('Run') {
+            steps {
+                // Start the application on port 7777
+                sh 'mvn jetty:run'
+                // or
+                // sh 'java -jar -Dserver.port=7777 target/your-app.war'
+            }
+        }
+    }
+}
