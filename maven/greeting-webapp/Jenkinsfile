@@ -33,9 +33,10 @@ pipeline {
         stage('Run') {
             steps {
                 // Start the application on port 7777
+                sh 'mvn archetype:generate -Dfilter=jetty:'
                 sh 'mvn jetty:run'
                 // or
-                // sh 'java -jar -Dserver.port=7777 target/your-app.war'
+                sh 'java -jar -Dserver.port=7777 target/greeting-webapp.war'
             }
         }
     }
