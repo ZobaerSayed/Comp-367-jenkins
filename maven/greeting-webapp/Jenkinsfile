@@ -35,7 +35,10 @@ pipeline {
             steps {
                 // Start the application on port 777
                 // or
-                sh 'mvn tomcat9:run'
+                dir('/var/lib/jenkins/workspace/Maven/maven/greeting-webapp'){
+                    sh 'mvn tomcat9:run'
+                }
+                
             }
         }
     }
