@@ -25,7 +25,7 @@
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat9-maven-plugin</artifactId>
-        <version>9.0.54</version>
+        <version>9.0.53</version>
         <configuration>
           <scanIntervalSeconds>10</scanIntervalSeconds>
           <port>8081</port>
