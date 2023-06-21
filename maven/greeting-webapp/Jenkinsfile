@@ -24,7 +24,9 @@ pipeline {
                     sh "echo ${password}"
                     sh "echo ${password} | sudo -S apt-get install -y maven"
                 }
-                sh 'mvn package'
+                dir('/var/lib/jenkins/workspace/Maven/maven/greeting-webapp') {
+                    sh 'mvn clean install'
+                }
             }
         }
         
