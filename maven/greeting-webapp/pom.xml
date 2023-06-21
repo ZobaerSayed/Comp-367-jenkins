@@ -30,9 +30,6 @@
           <scanIntervalSeconds>10</scanIntervalSeconds>
           <port>8080</port>
         </configuration>
-        <pluginGroups>
-          <pluginGroup>org.apache.tomcat.maven</pluginGroup>
-        </pluginGroups>
       </plugin>
     </plugins>
   </build>
