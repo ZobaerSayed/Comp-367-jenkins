@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 
-                tool 'Maven'
+                tool ''
                 sh 'mvn package'
             }
         }
