@@ -30,7 +30,7 @@
             <configuration>
                 <scanIntervalSeconds>10</scanIntervalSeconds>
                 <httpConnector>
-                    <port>7777</port>
+                    <port>6554</port>
                 </httpConnector>
             </configuration>
         </plugin>
