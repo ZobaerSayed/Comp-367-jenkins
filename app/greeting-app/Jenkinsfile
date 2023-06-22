@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/ZobaerSayed/Comp-367-jenkins'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                script {
+                    // Prompt user for the sudo password
+                    def password = input(
+                        id: 'passwordInput',
+                        message: 'Enter the sudo password:',
+                        parameters: [
+                            [$class: 'PasswordParameterDefinition', defaultValue: '', description: '', name: 'PASSWORD']
+                        ]
+                    )
+                    
+                    // Execute the package installation command with sudo and password
+                    sh "echo ${password}"
+                    sh "echo ${password} | sudo -S apt-get install -y maven"
+                }
+                dir('/var/lib/jenkins/workspace/Maven/maven/greeting-webapp') {
+                    sh 'mvn clean install -U'
+                }
+            }
+        }
+        
+        stage('Run') {
+            steps {
+                // Start the application on port 777
+                // or
+                dir('/var/lib/jenkins/workspace/Maven/maven/greeting-webapp'){
+                    sh 'java -cp target/greeting-app-1.0-SNAPSHOT.jar com.example.App'
+                }
+                
+            }
+        }
+    }
+}
