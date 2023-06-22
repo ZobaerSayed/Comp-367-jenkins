@@ -1,0 +1,16 @@
+### OSX ###
+*.DS_Store
+._*
+
+### Eclipse ###
+.settings/
+.project
+.classpath
+.tern-project
+
+### Maven ###
+target/
+
+### Java ###
+*.class
+*.jar
