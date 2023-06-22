@@ -35,7 +35,7 @@ pipeline {
                 // Start the application on port 777
                 // or
                 dir('/var/lib/jenkins/workspace/Greet/app/greeting-app'){
-                    sh 'java -cp target/greeting-app-1.0-SNAPSHOT.jar com.example.App'
+                    sh 'java -cp target/greeting-app-1.0-SNAPSHOT.jar GreetingApp'
                 }
                 
             }
