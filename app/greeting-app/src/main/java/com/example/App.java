@@ -40,8 +40,5 @@ public class App {
         } else if {
             return "Good evening Zobaer welcome to COMP367!!";
         }
-        else{
-          "Good Night Zobaer welcome to COMP367!!";  
-        }
     }
 }
