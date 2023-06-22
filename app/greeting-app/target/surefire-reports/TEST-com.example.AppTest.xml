@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.example.AppTest" time="0.003" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.example.AppTest" time="0.002" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="13.0.1+9"/>
     <property name="sun.boot.library.path" value="/opt/jdk-13.0.1/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/ncs/app/greeting-app"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/ncs/Comp-367-jenkins/app/greeting-app"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -13,7 +13,7 @@
     <property name="user.country" value="IN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/ncs/app/greeting-app"/>
+    <property name="user.dir" value="/home/ncs/Comp-367-jenkins/app/greeting-app"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="13.0.1+9"/>
     <property name="os.arch" value="amd64"/>
@@ -40,7 +40,7 @@
     <property name="java.class.path" value="/opt/apache-maven-3.6.3/boot/plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="13"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean package"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
     <property name="java.home" value="/opt/jdk-13.0.1"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -55,5 +55,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase classname="com.example.AppTest" name="testApp" time="0.003"/>
+  <testcase classname="com.example.AppTest" name="testApp" time="0.002"/>
 </testsuite>
