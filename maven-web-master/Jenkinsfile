@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+     tools {
+        maven 'maven-3.6.3' 
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/ZobaerSayed/Comp-367-jenkins'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                script {
+                    // Prompt user for the sudo password
+                    def password = input(
+                        id: 'passwordInput',
+                        message: 'Enter the sudo password:',
+                        parameters: [
+                            [$class: 'PasswordParameterDefinition', defaultValue: '', description: '', name: 'PASSWORD']
+                        ]
+                    )
+                    
+                    // Execute the package installation command with sudo and password
+                    sh "echo ${password}"
+                    sh "echo ${password} | sudo -S apt-get install -y maven"
+                }
+                dir('/var/lib/jenkins/workspace/Web-App-Master/web-app-master/maven-web') {
+                    sh 'mvn clean install -U'
+                    sh 'mvn package'
+                }
+            }
+        }
+        
+        stage('Run') {
+            steps {
+                // Start the application on port 777
+                // or
+               
+                
+                dir('/var/lib/jenkins/workspace/Web-App-Master/web-app-master/maven-web'){
+                    sh 'mvn tomcat9:run -X -e'
+                    sh 'deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '/var/lib/jenkins', url: 'https://localhost:8089/maven-webapp')], contextPath: 'maven-web-master/Jenkisnfile', onFailure: false, war: target/maven-web-master'
+                }
+                
+            }
+        }
+    }
+}
