@@ -14,13 +14,13 @@ public class App {
         int minute = time.getMinute();
 
         if (hour >= 0 && hour < 12) {
-            return "Good morning!";
+            return "Good morning Zobaer Welcome to COMP367!";
         } else if (hour >= 12 && hour < 17) {
-            return "Good afternoon!";
+            return "Good afternoon Zobaer Welcome to COMP367!!";
         } else if (hour >= 17 && (hour != 23 || minute != 59)) {
-            return "Good evening!";
+            return "Good evening Zobaer Welcome to COMP367!!";
         } else {
-            return "Good night!";
+            return "Good night Zobaer Welcome to COMP367!!";
         }
     }
 }
